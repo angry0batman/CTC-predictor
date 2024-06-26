@@ -65,4 +65,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 if st.button("Return to Main Page"):
+    # Display a message to the user
     st.write("Redirecting to main page...")
+    # Use HTML and JavaScript to redirect the user
+    st.components.v1.html(
+        """
+        <script>
+            window.location.href = "https://ctc-sure.vercel.app/";
+        </script>
+        """,
+        height=0,  # Height can be 0 since it's only JavaScript
+    )
