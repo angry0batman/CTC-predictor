@@ -38,6 +38,22 @@ if st.button("Predict CTC"):
     ctc = predict_ctc(experience, role, location, tier_of_college, soft_skills)
     st.write(f"Predicted CTC: {ctc}")
 
+# Add a line break
+st.write("")
+
+# Add "Return to Main Page" button
+if st.button("Return to Main Page"):
+    # Use HTML and JavaScript to redirect the user
+    st.components.v1.html(
+        """
+        <script>
+            window.location.href = "https://ctc-sure.vercel.app/";
+        </script>
+        """,
+        height=0,  # Height can be 0 since it's only JavaScript
+    )
+
+# Styling
 st.markdown("""
 <style>
     .main {
@@ -63,16 +79,3 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-
-if st.button("Return to Main Page"):
-    # Display a message to the user
-    st.write("Redirecting to main page...")
-    # Use HTML and JavaScript to redirect the user
-    st.components.v1.html(
-        """
-        <script>
-            window.location.href = "https://ctc-sure.vercel.app/";
-        </script>
-        """,
-        height=0,  # Height can be 0 since it's only JavaScript
-    )
